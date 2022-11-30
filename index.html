@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+      body
+      {
+        font-family:Calibri;
+        display:flex;
+        justify-content: center;
+        flex-direction : column;
+        text-align:center;
+        margin:0%;
+      }
+      .nav
+      {
+        display:flex;
+        padding: 2%;
+        background-color: whitesmoke;
+        justify-content: flex-end;
+        box-shadow:2px 2px 5px lightgray;
+        align-items: center;
+      }
+      .login
+      {
+        padding:1%;
+        padding-left :2%;
+        padding-right :2%;
+        font-size : 1.3em;
+        width:100;
+        height: 40;
+        color: darkslategray;
+        background-color: white;
+        font-weight : 100;
+        border-radius :5px;
+        border:0px;
+        box-shadow : 2px 2px 3px lightgray;
+        margin: 0%;
+      }
+      form{
+        margin: 0%;
+      }
+      #home{
+        font-size:4em;
+        font-weight: 300;
+        color: gray;
+      }
+    </style>
+  </head>
+    <body >
+      <div class = "nav">
+        <form method ="GET" action="/login">
+        <input type="submit" class="login" id="login" value="Login">
+        </form>
+      </div>
+      <h1 id = "home">Home Page !! </h1>
+    </body>
+</html>

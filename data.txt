@@ -1,0 +1,1 @@
+[{"Name":"ABC","Email":"kanishkahuja.242@gmail.com","Password":"111111111","verified":true,"OTP":742097},{"Name":"Dewyanshu","Email":"pandeydewyanshu421@gmail.com","Password":"111111111","verified":true,"OTP":622659},{"Name":"Kanishka","Email":"kanishikahuja221@gmail.com","Password":"111111111","verified":true,"OTP":839795}]

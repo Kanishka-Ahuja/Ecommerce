@@ -1,0 +1,232 @@
+body{
+        font-family:"Calibri";
+        display:flex;
+        justify-content: center;
+        flex-direction : column;
+        text-align:center;
+        margin:0%;
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .nav
+      {
+        margin: 0%;
+        background-color: darkcyan;
+        display: flex;
+        box-shadow: 2px 2px 3px lightgray;
+        padding-top: 1%;
+        padding-bottom: 1%;   
+        height: 7vh;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      .login
+      {
+        padding:1%;
+        font-size : 1em;
+        font-family: "Calibri";
+        height:30;
+        width:70;
+        color:slategray;
+        background-color: white;
+        font-weight : 100;
+        border-radius :5px;
+        border:0px solid lightgrey;
+        box-shadow : 2px 2px 3px lightgray;
+      }
+      form
+      {
+        margin:0%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #home{
+        font-size:4em;
+        font-weight: 300;
+        color: gray;
+      }
+      #sitename
+      {
+       color: white;
+       text-shadow: 1px 0px 1px lightgray;
+       font-size: clamp(20px,6vw,30px);
+       font-weight: 400;
+       font-family:"Geneva";
+       margin-left: 2%;
+      }
+      #activeuser
+      {
+        margin: 0%;
+        font-size: 1.2em;
+        padding-top: 1.5%;
+        padding-right: 1%;
+        font-weight: 300;
+        color: white;
+        margin-right: 2%;
+      }
+      .grid
+      {
+        margin-top: 10vh;
+        display: grid;
+        grid-template: repeat(1,45vh)/repeat(5,1fr);
+      }
+      .title
+      {
+        font-size: clamp(14px,1vw,20px);
+        margin: 0%;
+        height: 12vh;
+        font-family: "Calibri";
+        font-weight: 500;pointer-events: none;
+      }
+      .Price
+      {
+        font-size: clamp(14px,1vw,20px);
+        margin: 0%;
+        color: darkslategrey;
+        font-style: italic;
+        font-weight: 600;
+        pointer-events: none;
+      }
+      .image
+      {
+        height:8rem;
+        width: 7rem;
+        align-self: center;
+        pointer-events: none;
+      }
+      .image:hover
+      {
+        filter: brightness(130%);
+      }
+      .innerdiv1
+      {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 1px 1px 2px lightgray;
+        background-color: white;
+        padding: 2%;
+        border: 1px solid lightgray;
+      }
+      p
+      {
+        margin: 0%;
+      }
+      .innerdiv
+      {
+        margin: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 1px 1px 2px lightgray;
+        background-color: white;
+        padding: 1%;
+      }
+      .innerdiv:hover,.innerdiv1:hover
+      {
+        box-shadow: 1px 1px 10px rgb(172, 172, 172);
+      }
+      .imagediv
+      {
+        height: 28vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+      }.detailsdiv
+      {
+        height: 4vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1%;
+
+      }
+
+      .cart
+      {
+        height: 30px;
+        width: 30px;
+      }
+      .P
+      {
+        font-weight: 600;
+        font-size: clamp(14px,1vw,20px);
+      }
+      dialog
+      {
+        margin:10%;
+        border: 0px;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding: 0%;
+      }
+      .details
+      {
+        background-color: darkcyan;
+        box-shadow: 1px 1px 3px lightgray;
+        color: white;
+        border: 0px;
+        border-radius: 2px;
+        padding: 2%;
+        padding-left: 6%;
+        padding-right: 6%;
+        font-size:small;
+      }
+      .description
+      {
+        font-size: clamp(12.5px,1vw,20px);
+      }
+      .details1
+      {
+        background-color: darkcyan;
+        box-shadow: 1px 1px 2px lightgray;
+        color: white;
+        border: 0px;
+        border-radius: 2px;
+        padding: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        align-self: flex-end;
+        margin-top: 1%;
+      }
+      .load
+      {
+        background-color: darkcyan;
+        box-shadow: 1px 1px 2px lightgray;
+        color: white;
+        border: 0px;
+        border-radius: 2px;
+        padding: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        align-self: flex-end;
+        margin-top: 1%;
+        margin-right: 1%;
+        height: 5vh;
+        width: 7vw;
+      }
+
+      .formm
+      {
+        align-self: flex-end;
+        margin: 0.5%;
+        height: 5vh;
+        margin-right: 1%;
+      }
+      .btndiv{
+        display: flex;
+        padding-right: 4%;
+      }
+      .cart{
+        height: 25px;
+        width: 25px;
+      }
+      .vcart{
+        filter: brightness(200%);
+      }

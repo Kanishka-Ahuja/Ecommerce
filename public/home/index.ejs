@@ -1,0 +1,231 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/home/indexstyle.css" type="text/css">
+  </head>
+    <body>
+      <%- include('header.ejs',{name : name}) %>
+      <div class="grid" id ="grid">
+      <% for(i=0;i<data.length;i++){ %>
+        <div class="innerdiv" id="<%= data[i].Url %>" onclick=details(id)>
+          <div class="imagediv">
+        <img class= "image" src = "<%= data[i].Url %>" >
+        </div>
+        <h1 class = "title" ><%= data[i].Title %></h1>
+        <div class="detailsdiv">
+        <h1 class = "Price" ><%= data[i].Price %></h1>
+        <div class = "btndiv">
+        <a ><img class="cart" src="ATC.png" id = "<%= data[i].Url %>" onclick="stop(event)"></a>
+        <input class="details" type="button" name="<%= data[i].Url %>"  value="View Details" onclick="details(name)">
+      </div>
+      </div>
+      </div>
+        <% } %>
+      </div>
+      <dialog id="dialog">
+        <div class="innerdiv1"  >
+            <div>
+        <img class= "image" id = "image">
+          <p class="P" id="title"><p>
+          <h1 class = "Price" id = "price"></h1>
+          <p class = "description" id= "description"></p>
+        <input class="details1" type="button" value="Close" onclick="hidedetails()">           
+      </dialog>
+        <form class="formm">
+        <input class="load" type="button" name= '<%= data.length %>'  value="Load More" onclick="loadmore(name)">
+        </form>
+      <script>
+        correctcart()
+        function correctcart()
+        {
+          let ele = document.getElementsByClassName("cart")
+        let reqq = new XMLHttpRequest;
+        reqq.open("GET","/getcartdata")
+        reqq.send()
+        reqq.addEventListener("load",function(){
+          let data  = reqq.responseText
+          data = JSON.parse(data)
+          for(let i=0;i<ele.length;i++)
+          {
+            let f = data.find(function(element){
+              return element==ele[i].id
+            })
+            if(f)
+            {
+              ele[i].src = "ViewCart.png"
+            }
+          }
+        })
+        }
+
+        function loadmore(load){
+          hidedetails()
+          load = parseInt(load) +5
+          let req = new XMLHttpRequest();
+          req.open("GET",`/loadmore`)
+          req.send();
+          req.addEventListener("load",function(){
+            if(req.status===200)
+            {
+              if(req.responseText!=='')
+              {              
+              let data= JSON.parse(req.responseText)
+              for(let i=0;i<5;i++)
+              {
+                let doc = document.createElement("div")
+                doc.setAttribute("class","innerdiv")
+                doc.setAttribute("id",`${data[i].Url}`)
+                doc.addEventListener("click",calldetails)
+                let div = document.getElementById("grid")
+                div.appendChild(doc)
+                let doc1 = document.createElement("div")
+                doc1.setAttribute("class","imagediv")
+                doc.appendChild(doc1)
+                let img = document.createElement("img")
+                img.setAttribute("class","image")
+                img.setAttribute("src",`${data[i].Url}`)
+                doc1.appendChild(img)
+                let h1 = document.createElement("h1")
+                h1.setAttribute("class","title")
+                h1.innerHTML = data[i].Title
+                doc.appendChild(h1)
+                let docc = document.createElement("div")
+                docc.setAttribute("class","detailsdiv")
+                doc.appendChild(docc)
+                let doc2 = document.createElement("h1")
+                doc2.setAttribute("class","Price")
+                doc2.innerHTML = data[i].Price
+                docc.appendChild(doc2)
+                let divv = document.createElement("div")
+                divv.setAttribute("class","btndiv")
+                docc.appendChild(divv)
+                let a = document.createElement("a")
+                divv.appendChild(a)
+                let cart = document.createElement("img")
+                cart.setAttribute("id",`${data[i].Url}`)
+                cart.setAttribute("src","ATC.png")
+                cart.setAttribute("class","cart")
+                cart.addEventListener("click",stop)
+                a.appendChild(cart)
+                let input = document.createElement("input")
+                input.setAttribute("class","details")
+                input.setAttribute("type","button")
+                input.setAttribute("name",`${data[i].Url}`)
+                input.setAttribute("value","View Details")
+                input.addEventListener("click",calldetails2)
+                divv.appendChild(input)
+                correctcart()
+              }
+            }
+            else
+            {
+              alert("No more elements")
+            }
+          }
+          })
+        }
+
+        function stop(event)
+        {
+          if(event.target.src==="http://localhost:2875/ATC.png")
+          {
+          let id = event.target.id       
+          id = id.slice(0,id.length)
+          console.log(id)
+          let req = new XMLHttpRequest()
+          req.open("POST",'/addtocart')
+          req.setRequestHeader("Content-Type","application/json")
+          req.send(JSON.stringify({id:id}))
+          req.addEventListener("load",function()
+          {
+            if(req.status===200)
+            {
+              // let direction = JSON.parse(req.responseText)
+              // direction = direction.redirectTo
+              // if(direction)
+              // {
+              //   location.assign(direction)
+              // }
+              event.target.src = "ViewCart.png"
+              alert("Item added to cart")
+              
+            }
+          })
+        }
+        else{
+          let id = event.target.id       
+          id = id.slice(0,id.length)
+          console.log(id)
+          let req = new XMLHttpRequest()
+          req.open("POST",'/removefromcart')
+          req.setRequestHeader("Content-Type","application/json")
+          req.send(JSON.stringify({id:id}))
+          req.addEventListener("load",function()
+          {
+            if(req.status===200)
+            {
+              // let direction = JSON.parse(req.responseText)
+              // direction = direction.redirectTo
+              // if(direction)
+              // {
+              //   location.assign(direction)
+              // }
+              event.target.src = "ATC.png"
+              alert("Item Removed from the Cart")
+              
+            }
+          })
+        }
+          event.stopPropagation()
+        }
+        function calldetails(event)
+        {
+                id = event.target.id
+                console.log(id)
+                details(id)
+        }
+        function calldetails2(event)
+        {
+                id = event.target.name
+                console.log(id)
+                details(id)
+        }
+
+        function details(id)
+        {
+          let req = new XMLHttpRequest();
+          req.open("GET","/getfile")
+          req.send();
+          req.addEventListener("load",function(){
+            if(req.status===200)
+            {
+              let dia = document.getElementById('dialog')
+              dia.open = true;             
+              let data = req.responseText
+              data = JSON.parse(data)
+              for(let i=0;i<data.length;i++)
+              {
+                if(data[i].Url===id)
+                {
+                  let doc = document.getElementById("title")
+                  doc.innerHTML = data[i].Title
+                  doc = document.getElementById("price")
+                  doc.innerHTML = data[i].Price
+                  doc = document.getElementById("description")
+                  doc.innerHTML = data[i].Description
+                  doc = document.getElementById("image")
+                  doc.src = data[i].Url;
+                }
+              }
+              
+            }
+          })
+        }
+        function hidedetails()
+        {
+          let doc = document.getElementById("dialog")
+          console.log(doc)
+          doc.open = false
+        }
+      </script>
+    </body>
+</html>
