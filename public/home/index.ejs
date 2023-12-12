@@ -39,7 +39,7 @@
         {
           let ele = document.getElementsByClassName("cart")
         let reqq = new XMLHttpRequest;
-        reqq.open("GET","/getcartdata")
+        reqq.open("GET","/cart/getcart")
         reqq.send()
         reqq.addEventListener("load",function(){
           let data  = reqq.responseText
@@ -61,7 +61,7 @@
           hidedetails()
           load = parseInt(load) +5
           let req = new XMLHttpRequest();
-          req.open("GET",`/loadmore`)
+          req.open("GET",`/product/loadmore`)
           req.send();
           req.addEventListener("load",function(){
             if(req.status===200)
@@ -126,13 +126,13 @@
 
         function stop(event)
         {
-          if(event.target.src==="http://localhost:2875/ATC.png")
+          if(event.target.src==="http://localhost:2874/ATC.png")
           {
           let id = event.target.id       
           id = id.slice(0,id.length)
           console.log(id)
           let req = new XMLHttpRequest()
-          req.open("POST",'/addtocart')
+          req.open("POST",'/cart/addProduct')
           req.setRequestHeader("Content-Type","application/json")
           req.send(JSON.stringify({id:id}))
           req.addEventListener("load",function()
@@ -156,7 +156,7 @@
           id = id.slice(0,id.length)
           console.log(id)
           let req = new XMLHttpRequest()
-          req.open("POST",'/removefromcart')
+          req.open("POST",'/cart/removeProduct')
           req.setRequestHeader("Content-Type","application/json")
           req.send(JSON.stringify({id:id}))
           req.addEventListener("load",function()

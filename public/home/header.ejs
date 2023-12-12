@@ -1,11 +1,11 @@
 <div class = "nav" >
-    <a href="/showproduct" style="text-decoration: none"><h1 id ="sitename" >MusicalEra</h1></a>
+    <a href="/product/home" style="text-decoration: none"><h1 id ="sitename" >MusicalEra</h1></a>
     <div style="display: flex ; align-items: center ;justify-content: center; margin-right: 2%;">
         <a href ="/changeP"id ="activeuser" style="text-decoration:none"><%= name %></a>
-        <a href = "/addtocart" style="text-decoration:none; color: white ">View Cart
+        <a href = "/cart/showcart" style="text-decoration:none; color: white ">View Cart
         <img src="ViewCart.png" class="cart vcart">
         </a>
-    <form method ="GET" action="/logout">
+    <form method ="GET" action="/user/logout">
     <input type="submit" class="login" id="login" value="Log Out">
     </div>
     </form>

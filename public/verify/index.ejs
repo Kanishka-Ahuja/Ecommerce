@@ -2,12 +2,12 @@
   <head>
     <link rel="stylesheet" href="/signup/indexstyle.css" type="text/css">
   </head>
-  <body background="background2.jpg">   
+  <body background="../background2.jpg">   
     <div class = "nav">
       <h1 id ="sitename">MusicalEra</h1>
   </div>  
   <div class="content">
-    <form method="POST" action="/verifyemail">
+    <form method="POST" action="/user/verifyemail">
       <div class="head">
       <h1 class="heading">Verify Account</h1>
       </div>
@@ -24,7 +24,7 @@
       <input type="submit" id="button" value="Submit">
       </div>
       or
-      <h4 class="pswd"><a href="/signup">Create new account</a></h4>
+      <h4 class="pswd"><a href="/user/signup">Create new account</a></h4>
       <h4><%= Error %></h4>
     </form>
     </div>

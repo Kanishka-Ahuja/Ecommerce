@@ -32,7 +32,7 @@
         <script>
             function add(id) {
                 let req = new XMLHttpRequest()
-                req.open("POST", "/increment")
+                req.open("POST", "/cart/increment")
                 req.setRequestHeader("Content-Type", "application/json")
                 req.send(JSON.stringify({ id: id }))
                 req.addEventListener("load", function () {
@@ -46,7 +46,7 @@
             }
             function sub(id) {
                 let req = new XMLHttpRequest()
-                req.open("POST", "/decrement")
+                req.open("POST", "/cart/decrement")
                 req.setRequestHeader("Content-Type", "application/json")
                 req.send(JSON.stringify({ id: id }))
                 req.addEventListener("load", function () {
@@ -64,7 +64,7 @@
                 id = id.slice(1, id.length)
                 console.log(id)
                 let req = new XMLHttpRequest()
-                req.open("POST", '/removefromcart')
+                req.open("POST", '/cart/removeProduct')
                 req.setRequestHeader("Content-Type", "application/json")
                 req.send(JSON.stringify({ id: id }))
                 req.addEventListener("load", function () {
