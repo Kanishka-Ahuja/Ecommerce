@@ -1,9 +1,16 @@
 const express = require('express')
 const router = express.Router()
 
-const {loginPage,signupPage,verificationPage,logout} = require('../controllers/user/get')
+const {
+    loginPage,
+    signupPage,
+    verificationPage,
+    logout } = require('../controllers/user/get')
 
-const {login,signUp,verifyEmail} = require('../controllers/user/post')
+const {
+    login,
+    signUp,
+    verifyEmail } = require('../controllers/user/post')
 
 router.route('/login').get(loginPage);
 router.route('/signup').get(signupPage);
