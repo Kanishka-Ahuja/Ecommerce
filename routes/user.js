@@ -5,12 +5,14 @@ const {
     loginPage,
     signupPage,
     verificationPage,
-    logout } = require('../controllers/user/get')
+    logout 
+} = require('../controllers/user/get')
 
 const {
     login,
     signUp,
-    verifyEmail } = require('../controllers/user/post')
+    verifyEmail 
+} = require('../controllers/user/post')
 
 router.route('/login').get(loginPage);
 router.route('/signup').get(signupPage);

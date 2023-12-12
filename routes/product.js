@@ -4,7 +4,8 @@ const router = express()
 const {
     getProducts,
     showProducts,
-    loadmoreProducts } = require('../controllers/product/get');
+    loadmoreProducts 
+} = require('../controllers/product/get');
 
 router.route('/getproducts').get(getProducts);
 router.route('/home').get(showProducts);
