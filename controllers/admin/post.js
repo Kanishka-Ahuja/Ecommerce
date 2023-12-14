@@ -1,4 +1,5 @@
 const product = require('../../models/product.js')
+const handleError = require('../error')
 
 const addProducts = async (req, res) => {
 
@@ -15,7 +16,7 @@ const addProducts = async (req, res) => {
         })
 
         await products.save()
-        
+
         res.redirect('/admin/318k2i21d7t25788978')
 
     }
