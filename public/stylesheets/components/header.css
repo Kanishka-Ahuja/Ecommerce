@@ -1,0 +1,44 @@
+.nav {
+
+    height: 8vh;
+    width: 100vw;
+    margin: 0%;
+    padding: 1% 0%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    animation: backgroundchange 7s infinite ease-in-out;
+    
+}
+
+#sitename {
+
+    margin: 0%;
+    color: white;
+    text-shadow: 1px 0px 1px #faca9b;
+    font-size: clamp(4.5vh, 5vh, 5.5vh);
+    font-weight: 300;
+    font-family: cursive;
+    text-decoration: none;
+
+}
+
+
+
+@keyframes backgroundchange {
+
+    0% {
+        background-color: rgba(44, 42, 39, 0.963);
+    }
+
+    50% {
+        background-color: #584e42;
+    }
+
+    100% {
+        background-color: rgba(44, 42, 39, 0.963);
+    }
+
+}

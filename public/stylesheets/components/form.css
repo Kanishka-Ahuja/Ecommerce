@@ -1,0 +1,93 @@
+#form {
+
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 320px;
+    align-items: center;
+    justify-content: center;
+    font-family: calibri;
+    background: radial-gradient(at bottom right, rgba(250, 235, 215, 0), rgba(250, 235, 215, 0.250));
+    color: #584e42;
+    border-radius: 5px 0px 0px 0px;
+    padding: 3% 0%;
+    margin-top: 8vh;
+
+}
+
+#heading {
+
+    font-family: cursive;
+    font-weight: normal;
+    font-size: 6vh;
+    margin: 0%;
+    margin-bottom: 3vh;
+    margin-left: 7.5%;
+    align-self: flex-start;
+
+}
+
+.input {
+
+    color: rgba(44, 42, 39, 0.693);
+    border: none;
+    width: 88%;
+    box-shadow: 2px 1px 2px rgba(44, 42, 39, 0.249);
+    border-radius: 5px;
+    padding: 2% 3%;
+    margin: 2.5vh 0vh;
+    font-size: 3vh;
+    font-family: calibri;
+
+}
+
+.input:focus {
+
+    outline: none;
+    box-shadow: 2px 1px 2px rgba(44, 42, 39, 0.63);
+
+}
+
+#button {
+
+    margin: 2.5vh;
+    background-color: rgba(44, 42, 39, 0.628);
+    border: none;
+    padding: 2vh 3vh;
+    font-size: 3.5vh;
+    border-radius: 40% 0px 40% 0px;
+    font-family: calibri;
+    color: white;
+    cursor: pointer;
+
+}
+
+#error {
+
+    color: rgb(214, 107, 68);
+    font-size: 3.5vh;
+    margin: 1.5vh;
+
+}
+
+.additionalLinks {
+
+    display: inline-block;
+    font-style: italic;
+    font-size: 3vh;
+    color: rgb(2, 2, 63);
+    margin-top: 3vh;
+
+}
+
+@media only screen and (max-width:400px) {
+
+    #form {
+
+        width: 85vw;
+        height: 80vh;
+
+    }
+
+}
