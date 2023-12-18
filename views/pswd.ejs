@@ -1,0 +1,46 @@
+<html>
+
+  <head>
+
+    <title>The Musical Era</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/components/background.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/components/header.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/components/form.css" type="text/css">
+  
+  </head>
+
+  <body>   
+    
+    <%- include('components/header.ejs') %>
+
+    <form id="form" method="POST" action="/user/changeP">
+
+      <h1 id="heading">Change Password</h1>
+      
+      <input class="input" type="email" placeholder="Email ? ..." id = "Email" name= "Email" required>
+
+      <input class="input" type="password" placeholder="New Password ? ..." id = "Password" name= "NPassword" minlength="8" required>
+
+      <input class="input" type="password" placeholder="Confirm Password ..." id = "Password" name= "CPassword" minlength="8" required>
+
+      <input type="submit" id="button" value="Submit">
+
+      <% if(Error!="" ){ %>
+
+        <span id="error">⚠️<%= Error %>⚠️</span>
+  
+      <% } else { %>
+  
+        or
+  
+      <% } %>
+  
+      <a class="additionalLinks" href="/product/home">Don't want to change Password? ...</a>
+      
+    </form>
+  
+  </body>
+  
+</html>
