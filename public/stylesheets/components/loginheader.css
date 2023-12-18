@@ -1,0 +1,137 @@
+/* Footer CSS is also stored in this file  */
+
+.nav{
+    margin: 0%;
+    height: 9.3vh;
+    min-height: 50px;
+    max-height:70px;
+    padding-top:0.3vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    animation: backgroundchange 7s infinite ease-in-out;
+}
+
+#header{
+    top: 0;
+}
+
+#footer{
+    bottom: 0;
+    display: none;
+}
+
+#homeIcon{
+    font-size:x-large;
+}
+
+#searchdiv{
+    background-color: white;
+    height:5vh;
+    min-height: 25px;
+    max-height: 40px;
+    width:65vw;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 1.5vw;
+    justify-content: space-between;
+    font-family: calibri;
+}
+
+#search{
+      height:3.5vh;
+    min-height:20px;
+    max-height: 35px;
+    width:63vw;
+    border: none;
+    color:#584e42;
+    border-radius: 50px;
+}
+
+#search:focus{
+  outline: none;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.name{
+    font-size: clamp(14px,2.2vh,14px);
+    margin-top: 1vh;
+    font-family: calibri;
+    margin-bottom: 0px;
+}
+
+#cartheading{
+    margin-top: 0.6vh;
+}
+
+#counter{
+    position: relative;
+    top: -10px;
+    font-size: clamp(1vh,1.8vh,12px);
+}
+
+@media only screen and (max-width:800px) {
+
+    #searchdiv{
+        width:60vw;
+    }
+    #search{
+        width:59vw;
+    }
+    
+}
+
+@media only screen and (max-width:600px) {
+
+    #searchdiv{
+        width:40vw;
+    }
+    #search{
+        width:35vw;
+    }
+    
+}
+
+@media only screen and (max-width:420px) {
+    
+    .headerAnchorTags{
+        display: none;
+    }
+    #searchdiv{
+        width:87vw;
+    }
+    #search{
+        width:82vw;
+    }
+    #footer{
+        display: flex;
+    }
+
+}
+
+@keyframes backgroundchange {
+
+    0% {
+        background-color: rgba(44, 42, 39, 0.963);
+    }
+
+    50% {
+        background-color: #584e42;
+    }
+
+    100% {
+        background-color: rgba(44, 42, 39, 0.963);
+    }
+
+}
+
+#grid{
+    display: none;
+}
