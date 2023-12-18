@@ -11,20 +11,20 @@
 
 </head>
 
-<body>
-
   <%- include('components/header.ejs') %>
 
-  <form id="form" method="POST" action="/user/login">
-
-    <h1 id="heading">Login</h1>
-
-    <input class="input" type="email" placeholder="Email ?..." id="Email" name="Email" required>
-
-    <input class="input" type="password" placeholder="Password ?..." id="Password" name="Password" minlength="8" required>
-
+  <form id="form" method="POST" action="/user/signup">
+    
+    <h1 id="heading">Sign Up</h1>
+    
+    <input class="input" type="text" placeholder="Full Name ?... " id = "Name" name= "Name">
+    
+    <input class="input" type="email" placeholder="Email ?..." id = "Email" name= "Email" required>
+    
+    <input class="input" type="password" placeholder="Password ?..." id = "Password" name= "Password" minlength="8" required>
+    
     <input type="submit" id="button" value="Submit">
-
+    
     <% if(Error!="" ){ %>
 
       <span id="error">⚠️<%= Error %>⚠️</span>
@@ -34,11 +34,11 @@
       or
 
     <% } %>
+    
+    <a class="additionalLinks" href="/user/login">Login to exiting account</a></h4>
+    
+    </form>
 
-    <a class="additionalLinks" href="/user/signup"> Create New Account ...</a>
-
-  </form>
-
-</body>
+  </body>
 
 </html>

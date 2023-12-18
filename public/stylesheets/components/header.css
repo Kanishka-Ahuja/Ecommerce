@@ -18,7 +18,7 @@
     margin: 0%;
     color: white;
     text-shadow: 1px 0px 1px #faca9b;
-    font-size: clamp(4.5vh, 5vh, 5.5vh);
+    font-size: clamp(4.5vh, 5vh, 42px);
     font-weight: 300;
     font-family: cursive;
     text-decoration: none;
