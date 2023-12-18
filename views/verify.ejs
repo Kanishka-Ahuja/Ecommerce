@@ -1,0 +1,46 @@
+<html>
+
+  <head>
+    
+    <title>The Musical Era</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/components/background.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/components/header.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/components/form.css" type="text/css">
+
+  </head>
+
+<body>   
+
+  <%- include('components/header.ejs') %>
+
+  <form id="form" method="POST" action="/user/verifyemail">
+      
+    <h1 id="heading">Verify Account</h1>
+      
+    <input class="input" type="email" placeholder="Email ? ..." id = "Email" name= "Email" required>
+
+    <input class="input" type="password" placeholder="Password ? ..." id = "Password" name= "Password" minlength="8" required>
+
+    <input class="input" type="text" placeholder="OTP ? ..." id = "OTP" name= "OTP">
+      
+    <input type="submit" id="button" value="Submit">
+
+    <% if(Error!="" ){ %>
+
+      <span id="error">⚠️<%= Error %>⚠️</span>
+
+    <% } else { %>
+
+      or
+
+    <% } %>
+
+    <a class="additionalLinks" href="/user/signup"> Create New Account ...</a>
+
+    </form>
+
+</body>
+
+</html>
