@@ -16,11 +16,13 @@
 
 #header{
     top: 0;
+    z-index: 2;
 }
 
 #footer{
     bottom: 0;
     display: none;
+    z-index: 2;
 }
 
 #homeIcon{
@@ -71,7 +73,7 @@ a{
     margin-top: 0.6vh;
 }
 
-#counter{
+.counter{
     position: relative;
     top: -10px;
     font-size: clamp(1vh,1.8vh,12px);

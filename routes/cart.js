@@ -3,7 +3,9 @@ const router = express.Router()
 
 const {
     showcart,
-    getcart 
+    getcart,
+    countitems,
+    incart,
 } = require('../controllers/cart/get')
 
 const {
@@ -15,6 +17,8 @@ const {
 
 router.route('/showcart').get(showcart);
 router.route('/getcart').get(getcart);
+router.route('/countitems').get(countitems)
+router.route('/incart').get(incart);
 
 router.route('/addProduct').post(addProduct);
 router.route('/removeProduct').post(removeProduct);

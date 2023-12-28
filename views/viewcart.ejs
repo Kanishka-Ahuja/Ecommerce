@@ -1,0 +1,108 @@
+<html>
+
+<head>
+
+    <title>The Musical Era</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/components/header.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/components/cart.css" type="text/css">
+    <script src="/scripts/home.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <%- include('components/header.ejs') %>
+
+        <% if(data.length==0){ %>
+
+            <a href="/product/home" style="text-decoration: none;">
+                <img id="emptyCartImg" src="/images/emptyCart.png">
+                <p>Shop Now</p>
+            </a>
+
+            <% } else { %>
+
+                <div class="grid">
+
+                    <% for(let i=0;i<data.length;i++){ %>
+
+                        <div id="d<%= data[i].Url %>" class="maindiv">
+                            <img class="image" src="../<%= data[i].Url %>">
+                            <div class="contentdiv">
+                                <p class="head">
+                                    <%= data[i].Title %>
+                                </p>
+                                <p class="amt">
+                                    <%= data[i].Price %>
+                                </p>
+                                <div class="btnndiv">
+                                    <button class="btnn" name="<%= data[i].Url %>" onclick='add(name)'>+</button>
+                                    <p id="<%= data[i].Url %>" class="qty">
+                                        <%= data[i].Qty %>
+                                    </p>
+                                    <button class="btnn" name="<%= data[i].Url %>" onclick='sub(name)'>-</button>
+                                </div>
+                                <img id="1<%= data[i].Url %>" class="cart del" src="/images/deleteicon.jpg"
+                                    onclick="remove(id)">
+                            </div>
+                        </div>
+                        <% } %>
+
+                </div>
+                <% } %>
+                    <script>
+                        function add(id) {
+                            let req = new XMLHttpRequest()
+                            req.open("POST", "/cart/increment")
+                            req.setRequestHeader("Content-Type", "application/json")
+                            req.send(JSON.stringify({ id: id }))
+                            req.addEventListener("load", function () {
+                                if (req.status === 200) {
+                                    let data = req.responseText
+                                    data = JSON.parse(data)
+                                    let doc = document.getElementById(id)
+                                    doc.innerHTML = data
+                                }
+                            })
+                        }
+                        function sub(id) {
+                            let req = new XMLHttpRequest()
+                            req.open("POST", "/cart/decrement")
+                            req.setRequestHeader("Content-Type", "application/json")
+                            req.send(JSON.stringify({ id: id }))
+                            req.addEventListener("load", function () {
+                                if (req.status === 200) {
+                                    let data = req.responseText
+                                    data = JSON.parse(data)
+                                    let doc = document.getElementById(id)
+                                    doc.innerHTML = data
+                                }
+                            })
+                        }
+
+                        function remove(id) {
+
+                            id = id.slice(1, id.length)
+                            console.log(id)
+                            let req = new XMLHttpRequest()
+                            req.open("POST", '/cart/removeProduct')
+                            req.setRequestHeader("Content-Type", "application/json")
+                            req.send(JSON.stringify({ id: id }))
+                            req.addEventListener("load", function () {
+                                if (req.status === 200) {
+                                    // let direction = JSON.parse(req.responseText)
+                                    // direction = direction.redirectTo
+                                    // if(direction)
+                                    // {
+                                    //   location.assign(direction)
+                                    // }
+                                    let div = document.getElementById(`d${id}`)
+                                    div.remove()
+                                    alert("Item Removed from the Cart")
+                                }
+                            })
+                        }
+                    </script>
+</body>
+
+</html>

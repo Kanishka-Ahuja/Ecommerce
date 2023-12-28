@@ -1,0 +1,95 @@
+#dialogbox{
+    width:100vw;
+    display: none;
+    border:none;
+    z-index: 1;
+    padding: 0%;
+}
+
+#leftdiv,#rightdiv{
+    width:9vw;
+    background: none;
+    background: linear-gradient( to bottom right,#f5bf6e3b,#413b3516);
+}
+
+#details{
+
+    width: 82vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family:  monospace;
+    padding: 10px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+}
+
+.favIcon{
+    align-self: flex-start;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.closeIcon{
+    align-self: flex-end;
+}
+
+#ImageDetails{
+
+    width: 180px;
+    height: 200px;
+    margin-top: 1vh;
+}
+
+#PriceDetails{
+    color: brown;
+    font-size: x-large;
+    font-family: calibri;
+    margin: 1vh 0vh;
+}
+
+#TitleDetails{
+    font-family: calibri;
+    font-size: large;
+    color: #413b35;
+    margin: 0%;
+    width:70vw;
+}
+
+#DescriptionDetails{
+    color:#584e42df;
+    margin: 4vh 0vh;
+    font-family: arial;
+    font-size: small;
+    width: 70vw;
+}
+
+.ATCdiv,#BuyNowDiv{
+
+    background-color: #584e42d6;
+    color: white;
+    width:35vw;
+    padding: 1vh 1vh;
+    margin: 1vh 0vh;
+    font-size: large;
+    border-radius: 10px;
+    align-items: center;
+
+}
+ 
+#BuyNowDiv{
+    background-color:#413b35db;
+    margin-bottom: 2vh ;
+}
+
+@media only screen and (max-width:300px){
+    #ImageDetails{
+        width:150px;
+        height:150px;
+    }
+    #TitleDetails{
+        font-size: medium;
+    }
+}

@@ -1,23 +1,10 @@
-body{
-    margin:0;
-    background-image: url("../images/background.png");
-    background-position:bottom right;
-    background-repeat: no-repeat;
-    background-size: 95%;
-    background-color: #f5be6e;
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-    display: flex;
-    align-items: center;
-}
-
 #center{
-    position:relative;
     width: 100vw;
+    height:100vh;
     color:white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 #number{
@@ -28,13 +15,13 @@ body{
     width: 100vw;
     align-items: center;
     justify-content: center;
-    animation: visible 3s  ease-in-out;
+    animation: visible 2s  ease-in-out;
 }
 
-#o{
+.o{
     font-size: 20vh;
     text-shadow: 2px 1px rgba(128, 128, 128, 0.674);
-    animation: zoom 3s  ease-in-out;
+    animation: zoom 1.5s  ease-in-out;
 }
 
 #title{
@@ -42,7 +29,7 @@ body{
     font-family: calibri;
     margin: 0%;
     text-shadow: 1.5px 0.5px rgba(128, 128, 128, 0.674);
-    animation: visible 3s   ease-in-out;
+    animation: visible 2s   ease-in-out;
 }
 
 
